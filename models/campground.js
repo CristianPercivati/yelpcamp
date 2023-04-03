@@ -6,7 +6,11 @@ const campgroundSchema =  new mongoose.Schema({
     description: String,
     location: String,
     rating: String,
-    image: String
+    image: String,
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 })
 
 module.exports = mongoose.model("Campground", campgroundSchema)
